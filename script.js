@@ -20,7 +20,7 @@ const z2 = [];
 for (let i = 0; i < z1.length; i++) {
   const z2_row = [];
   for (let j = 0; j < z1[i].length; j++) {
-    z2_row.push(z1[i][j] + 1);
+    z2_row.push(z1[i][j] + 0.01);
   }
   z2.push(z2_row);
 }
@@ -29,15 +29,15 @@ const z3 = []
 for (var i = 0; i < z1.length; i++) {
   const z3_row = [];
   for (var j = 0; j < z1[i].length; j++) {
-    z3_row.push(z1[i][j] - 1);
+    z3_row.push(z1[i][j] - 0.01);
   }
   z3.push(z3_row);
 }
 var data_z1 = { z: z1, type: 'surface' };
-var data_z2 = { z: z2, showscale: false, opacity: 0.9, type: 'surface' };
-var data_z3 = { z: z3, showscale: false, opacity: 0.9, type: 'surface' };
+var data_z2 = { z: z2, showscale: false, opacity: 0.75, type: 'surface' };
+var data_z3 = { z: z3, showscale: false, opacity: 0.99, type: 'surface' };
 
 // eslint-disable-next-line no-undef
-Plotly.newPlot('root', [data_z1, data_z2, data_z3]);
+Plotly.newPlot('root', [data_z1, data_z2, data_z3],{width: 0.98 * window.innerWidth || 1000, height: 0.98 * window.innerHeight || 600});
 
 
